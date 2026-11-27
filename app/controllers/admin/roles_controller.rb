@@ -84,7 +84,7 @@ class Admin::RolesController < ApplicationController
   end
 
   def change
-    if @role.update_attributes!(role_params)
+    if @role.update!(role_params)
       flash = { notice: t(:role_updated, scope: t_scope) }
       redirect_to_edit flash
     else
